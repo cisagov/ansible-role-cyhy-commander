@@ -1,2 +1,57 @@
 ---
-# tasks file for skeleton
+# tasks file for cyhy_commander
+
+#
+# Install curl and unzip; they are needed by cyhy_core/var/load_places.sh
+#
+- name: Install curl and unzip
+  package:
+    name:
+      - curl
+      - unzip
+
+#
+# Grab the cyhy-commander code
+#
+- name: Create the /var/cyhy/commander directory
+  file:
+    path: /var/cyhy/commander
+    state: directory
+
+- name: Download and untar the cyhy-commander tarball
+  unarchive:
+    src: "https://api.github.com/repos/jsf9k/cyhy-commander/tarball/develop?\
+    access_token={{ github_oauth_token }}"
+    dest: /var/cyhy/commander
+    remote_src: yes
+    extra_opts:
+      - "--strip-components=1"
+
+#
+# Now we need to install the cyhy-commander dependencies
+#
+# TODO: Figure out why we can't just put docutils in cyhy-commander/setup.py
+- name: Install docutils, since cyhy-commander needs it
+  pip:
+    name:
+      - docutils
+
+- name: Install cyhy-commander
+  pip:
+    name: file:///var/cyhy/commander
+
+# Create the log directory
+- name: Create the /var/log/cyhy directory
+  file:
+    path: /var/log/cyhy
+    state: directory
+
+# Copy the systemd unit file
+- name: Copy the systemd unit file for cyhy-commander
+  copy:
+    src: cyhy-commander.service
+    dest: /lib/systemd/system/cyhy-commander.service
+    mode: 0644
+
+# Don't enable cyhy-commander here; we do that when we spin up an instance
+# so remaining setup tasks can be completed first

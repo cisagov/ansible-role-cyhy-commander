@@ -10,7 +10,20 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 ).get_hosts("all")
 
 
-@pytest.mark.parametrize("x", [True])
-def test_packages(host, x):
-    """Run a dummy test, just to show what one would look like."""
-    assert x
+@pytest.mark.parametrize("pkg", ["cyhy-commander"])
+def test_packages(host, pkg):
+    """Test that the pip packages were installed."""
+    assert pkg in host.pip_package.get_packages()
+
+
+@pytest.mark.parametrize(
+    "f",
+    [
+        "/var/cyhy/commander",
+        "/var/log/cyhy",
+        "/lib/systemd/system/cyhy-commander.service",
+    ],
+)
+def test_files(host, f):
+    """Test that the expected files and directories are present."""
+    assert host.file(f).exists
