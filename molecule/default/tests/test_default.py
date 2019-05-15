@@ -19,8 +19,9 @@ def test_packages(host, pkg):
 @pytest.mark.parametrize(
     "f",
     [
-        "/var/cyhy/commander",
+        "/var/local/cyhy/commander",
         "/var/log/cyhy",
+        "/var/cyhy/commander",
         "/lib/systemd/system/cyhy-commander.service",
     ],
 )
