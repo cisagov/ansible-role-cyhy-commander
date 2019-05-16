@@ -13,16 +13,16 @@
 #
 # Grab the cyhy-commander code
 #
-- name: Create the /var/cyhy/commander directory
+- name: Create the /var/local/cyhy/commander directory
   file:
-    path: /var/cyhy/commander
+    path: /var/local/cyhy/commander
     state: directory
 
 - name: Download and untar the cyhy-commander tarball
   unarchive:
     src: "https://api.github.com/repos/jsf9k/cyhy-commander/tarball/develop?\
     access_token={{ github_oauth_token }}"
-    dest: /var/cyhy/commander
+    dest: /var/local/cyhy/commander
     remote_src: yes
     extra_opts:
       - "--strip-components=1"
@@ -38,13 +38,16 @@
 
 - name: Install cyhy-commander
   pip:
-    name: file:///var/cyhy/commander
+    name: file:///var/local/cyhy/commander
 
-# Create the log directory
-- name: Create the /var/log/cyhy directory
+# Create some directories
+- name: Create some directories that cyhy-commander requires
   file:
-    path: /var/log/cyhy
+    path: "{{ item }}"
     state: directory
+  loop:
+    - /var/log/cyhy
+    - /var/cyhy/commander
 
 # Copy the systemd unit file
 - name: Copy the systemd unit file for cyhy-commander
