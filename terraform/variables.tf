@@ -9,7 +9,7 @@ variable "tags" {
 
   default = {
     Team        = "NCATS OIS - Development"
-    Application = "ansible-role-cyhy-core testing"
+    Application = "ansible-role-cyhy-commander testing"
   }
 }
 
