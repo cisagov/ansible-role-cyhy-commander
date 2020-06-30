@@ -5,7 +5,7 @@
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/ansible-role-cyhy-commander.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-cyhy-commander/context:python)
 
 An Ansible role for installing
-[cisagov/cyhy-commander](https://github.com/cisagov/cyhy-commander).
+[jsf9k/cyhy-commander](https://github.com/jsf9k/cyhy-commander).
 
 ## Requirements ##
 
