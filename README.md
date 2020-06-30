@@ -1,6 +1,6 @@
 # ansible-role-cyhy-commander #
 
-[![Build Status](https://travis-ci.com/cisagov/ansible-role-cyhy-commander.svg?branch=develop)](https://travis-ci.com/cisagov/ansible-role-cyhy-commander)
+[![GitHub Build Status](https://github.com/cisagov/ansible-role-cyhy-commander/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-cyhy-commander/actions)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/cisagov/ansible-role-cyhy-commander.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-cyhy-commander/alerts/)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/ansible-role-cyhy-commander.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-cyhy-commander/context:python)
 

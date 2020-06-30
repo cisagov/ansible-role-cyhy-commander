@@ -2,10 +2,13 @@
 galaxy_info:
   author: Shane Frasier
   description: Install jsf9k/cyhy-commander.
-  company: CISA NCATS
+  company: CISA Cyber Assessments
   license: CC0
   min_ansible_version: 2.0
   platforms:
+    - name: Amazon
+      versions:
+        - 2
     - name: Debian
       versions:
         - stretch
