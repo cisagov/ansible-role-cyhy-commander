@@ -17,11 +17,15 @@
   file:
     path: /var/local/cyhy/commander
     state: directory
-
-- name: Download and untar the cyhy-commander tarball
+- name: Download the cyhy-commander tarball
+  get_url:
+    url: https://api.github.com/repos/jsf9k/cyhy-commander/tarball/develop
+    dest: /tmp/cyhy-commander.tgz
+    headers:
+      Authorization: token {{ github_oauth_token }}
+- name: Unarchive the cyhy-commander tarball
   unarchive:
-    src: "https://api.github.com/repos/jsf9k/cyhy-commander/tarball/develop?\
-    access_token={{ github_oauth_token }}"
+    src: /tmp/cyhy-commander.tgz
     dest: /var/local/cyhy/commander
     remote_src: yes
     extra_opts:
