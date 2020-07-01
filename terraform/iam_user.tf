@@ -10,6 +10,6 @@ module "iam_user" {
   }
 
   entity         = "ansible-role-cyhy-commander"
-  ssm_parameters = ["/github/oauth_token"]
+  ssm_parameters = ["/github/oauth_token", "/cyhy/core/geoip/license_key"]
   tags           = var.tags
 }
