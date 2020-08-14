@@ -19,7 +19,7 @@
     state: directory
 - name: Download the cyhy-commander tarball
   get_url:
-    url: https://api.github.com/repos/jsf9k/cyhy-commander/tarball/develop
+    url: https://api.github.com/repos/jsf9k/cyhy-commander/tarball/update_to_fabric2
     dest: /tmp/cyhy-commander.tgz
     headers:
       Authorization: token {{ github_oauth_token }}
@@ -39,6 +39,11 @@
   pip:
     name:
       - docutils
+
+- name: Install pipdeptree to see package dependencies.
+  pip:
+    name:
+      - pipdeptree
 
 - name: Install cyhy-commander
   pip:
