@@ -55,11 +55,14 @@ the repository's settings.
 
 ## Requirements ##
 
-None.
+* The [boto3](https://pypi.org/project/boto3/) Python package for performing
+  `lookup()`s of AWS SSM Parameter Store keys.
 
 ## Role Variables ##
 
-None.
+* `github_oauth_token` - The GitHub OAuth token that provides access to the
+  private [jsf9k/cyhy-commander](https://github.com/jsf9k/cyhy-commander)
+  repository.
 
 ## Dependencies ##
 
