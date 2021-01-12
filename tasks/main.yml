@@ -25,10 +25,7 @@
     headers:
       Authorization: token {{ github_oauth_token }}
 - name: Unarchive the cyhy-commander tarball
-  # ansible-lint E208 gives an error if we don't specify the mode,
-  # but we definitely don't want to do that here since it will
-  # override the permissions on the files in the archive.
-  unarchive: # noqa 208
+  unarchive:
     src: /tmp/cyhy-commander.tgz
     dest: /var/local/cyhy/commander
     remote_src: yes
