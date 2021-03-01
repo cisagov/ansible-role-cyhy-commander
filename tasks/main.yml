@@ -5,7 +5,7 @@
 # Install curl and unzip; they are needed by cyhy_core/var/load_places.sh
 #
 - name: Install curl and unzip
-  package:
+  ansible.builtin.package:
     name:
       - curl
       - unzip
@@ -14,18 +14,18 @@
 # Grab the cyhy-commander code
 #
 - name: Create the /var/local/cyhy/commander directory
-  file:
+  ansible.builtin.file:
     mode: 0755
     path: /var/local/cyhy/commander
     state: directory
 - name: Download the cyhy-commander tarball
-  get_url:
+  ansible.builtin.get_url:
     url: https://api.github.com/repos/jsf9k/cyhy-commander/tarball/develop
     dest: /tmp/cyhy-commander.tgz
     headers:
       Authorization: token {{ github_oauth_token }}
 - name: Unarchive the cyhy-commander tarball
-  unarchive:
+  ansible.builtin.unarchive:
     src: /tmp/cyhy-commander.tgz
     dest: /var/local/cyhy/commander
     remote_src: yes
@@ -37,17 +37,17 @@
 #
 # TODO: Figure out why we can't just put docutils in cyhy-commander/setup.py
 - name: Install docutils, since cyhy-commander needs it
-  pip:
+  ansible.builtin.pip:
     name:
       - docutils
 
 - name: Install cyhy-commander
-  pip:
+  ansible.builtin.pip:
     name: file:///var/local/cyhy/commander
 
 # Create some directories
 - name: Create some directories that cyhy-commander requires
-  file:
+  ansible.builtin.file:
     mode: 0755
     path: "{{ item }}"
     state: directory
@@ -57,7 +57,7 @@
 
 # Copy the systemd unit file
 - name: Copy the systemd unit file for cyhy-commander
-  copy:
+  ansible.builtin.copy:
     src: cyhy-commander.service
     dest: /lib/systemd/system/cyhy-commander.service
     mode: 0644
