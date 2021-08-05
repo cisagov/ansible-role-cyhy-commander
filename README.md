@@ -55,18 +55,18 @@ in the repository's settings.
 
 ## Requirements ##
 
-* The [boto3](https://pypi.org/project/boto3/) Python package for performing
+- The [boto3](https://pypi.org/project/boto3/) Python package for performing
   `lookup()`s of AWS SSM Parameter Store keys.
 
 ## Role Variables ##
 
-* `github_oauth_token` - The GitHub OAuth token that provides access to the
+- `github_oauth_token` - The GitHub OAuth token that provides access to the
   private [jsf9k/cyhy-commander](https://github.com/jsf9k/cyhy-commander)
   repository.
 
 ## Dependencies ##
 
-* [cisagov/ansible-role-cyhy-core](https://github.com/cisagov/ansible-role-cyhy-core)
+- [cisagov/ansible-role-cyhy-core](https://github.com/cisagov/ansible-role-cyhy-core)
 
 ## Example Playbook ##
 
