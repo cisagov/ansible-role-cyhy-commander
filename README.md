@@ -63,16 +63,9 @@ in the repository's settings.
 
 ## Role Variables ##
 
-- `github_oauth_token` - The GitHub OAuth token that provides access to the
-  private [jsf9k/cyhy-commander](https://github.com/jsf9k/cyhy-commander)
-  repository.
-
-<!--
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
-| optional_variable | Describe its purpose. | `default_value` | No |
-| required_variable | Describe its purpose. | n/a | Yes |
--->
+| github_oauth_token | The GitHub OAuth token that provides access to the private [jsf9k/cyhy-commander](https://github.com/jsf9k/cyhy-commander) repository. | n/a | Yes |
 
 ## Dependencies ##
 
