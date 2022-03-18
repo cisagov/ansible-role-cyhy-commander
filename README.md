@@ -5,7 +5,7 @@
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/ansible-role-cyhy-commander.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-cyhy-commander/context:python)
 
 An Ansible role for installing
-[jsf9k/cyhy-commander](https://github.com/jsf9k/cyhy-commander).
+[cisagov/cyhy-commander](https://github.com/cisagov/cyhy-commander).
 
 ## Pre-requisites (Ignore Until the COOL Migration) ##
 
@@ -65,7 +65,7 @@ in the repository's settings.
 
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
-| github_oauth_token | The GitHub OAuth token that provides access to the private [jsf9k/cyhy-commander](https://github.com/jsf9k/cyhy-commander) repository. | n/a | Yes |
+| github_oauth_token | The GitHub OAuth token that provides access to the private [cisagov/cyhy-commander](https://github.com/cisagov/cyhy-commander) repository. | n/a | Yes |
 
 ## Dependencies ##
 

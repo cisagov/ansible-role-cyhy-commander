@@ -20,7 +20,7 @@
     state: directory
 - name: Download the cyhy-commander tarball
   ansible.builtin.get_url:
-    url: https://api.github.com/repos/jsf9k/cyhy-commander/tarball/develop
+    url: https://api.github.com/repos/cisagov/cyhy-commander/tarball/develop
     dest: /tmp/cyhy-commander.tgz
     headers:
       Authorization: token {{ github_oauth_token }}
