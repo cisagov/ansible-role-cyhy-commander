@@ -13,15 +13,12 @@
       - unzip
 
 # TODO: Figure out why we can't just put docutils in cyhy-commander/setup.py
-- name: Install docutils, since cyhy-commander needs it
-  ansible.builtin.pip:
-    name:
-      - docutils
-
-- name: Install cyhy-commander
+- name: Install cyhy-commander and docutils (a cyhy-commander dependency)
   ansible.builtin.pip:
     executable: /usr/bin/pip2
-    name: "git+https://git:{{ github_oauth_token }}@github.com/cisagov/cyhy-commander.git"
+    name:
+      - git+https://git:{{ github_oauth_token }}@github.com/cisagov/cyhy-commander.git
+      - docutils
   # The value of github_oauth_token is sensitive so we need to ensure that it
   # is not accidentally leaked if the task fails.
   no_log: true
