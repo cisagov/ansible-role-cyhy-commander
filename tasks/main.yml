@@ -17,11 +17,8 @@
   ansible.builtin.pip:
     executable: /usr/bin/pip2
     name:
-      - git+https://git:{{ github_oauth_token }}@github.com/cisagov/cyhy-commander.git
+      - https://api.github.com/repos/cisagov/cyhy-commander/tarball/develop
       - docutils
-  # The value of github_oauth_token is sensitive so we need to ensure that it
-  # is not accidentally leaked if the task fails.
-  no_log: true
 
 # Create some directories
 - name: Create some directories that cyhy-commander requires

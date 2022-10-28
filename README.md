@@ -58,14 +58,18 @@ in the repository's settings.
 
 ## Requirements ##
 
-- The [boto3](https://pypi.org/project/boto3/) Python package for performing
-  `lookup()`s of AWS SSM Parameter Store keys.
+None.
 
 ## Role Variables ##
 
+None.
+
+<!--
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
-| github_oauth_token | The GitHub OAuth token that provides access to the private [cisagov/cyhy-commander](https://github.com/cisagov/cyhy-commander) repository. | n/a | Yes |
+| optional_variable | Describe its purpose. | `default_value` | No |
+| required_variable | Describe its purpose. | n/a | Yes |
+-->
 
 ## Dependencies ##
 
