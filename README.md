@@ -24,6 +24,8 @@ None.
 ## Dependencies ##
 
 - [cisagov/ansible-role-cyhy-core](https://github.com/cisagov/ansible-role-cyhy-core)
+- [cisagov/ansible-role-pip](https://github.com/cisagov/ansible-role-pip)
+- [cisagov/ansible-role-python](https://github.com/cisagov/ansible-role-python)
 
 ## Example Playbook ##
 
