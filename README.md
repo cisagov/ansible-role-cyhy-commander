@@ -1,8 +1,7 @@
 # ansible-role-cyhy-commander #
 
 [![GitHub Build Status](https://github.com/cisagov/ansible-role-cyhy-commander/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-cyhy-commander/actions)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/cisagov/ansible-role-cyhy-commander.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-cyhy-commander/alerts/)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/ansible-role-cyhy-commander.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-cyhy-commander/context:python)
+[![CodeQL](https://github.com/cisagov/ansible-role-cyhy-commander/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ansible-role-cyhy-commander/actions/workflows/codeql-analysis.yml)
 
 An Ansible role for installing
 [cisagov/cyhy-commander](https://github.com/cisagov/cyhy-commander).
@@ -34,8 +33,10 @@ Here's how to use it in a playbook:
 - hosts: commander
   become: yes
   become_method: sudo
-  roles:
-    - cyhy_commander
+  tasks:
+    - name: Install the CyHy commander
+      ansible.builtin.include_role:
+        name: cyhy_commander
 ```
 
 ## Contributing ##
