@@ -3,13 +3,11 @@
 
 #
 # Install curl and unzip; they are needed by cyhy_core/var/load_places.sh
-# Install git so that pip can install from a git URL
 #
 - name: Install curl and unzip
   ansible.builtin.package:
     name:
       - curl
-      - git
       - unzip
 
 # TODO: Figure out why we can't just put docutils in cyhy-commander/setup.py
