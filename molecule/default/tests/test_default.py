@@ -12,7 +12,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 ).get_hosts("all")
 
 
-@pytest.mark.parametrize("pkg", ["curl", "git", "unzip"])
+@pytest.mark.parametrize("pkg", ["curl", "unzip"])
 def test_apt_packages(host, pkg):
     """Test that the apt packages were installed."""
     assert host.package(pkg).is_installed

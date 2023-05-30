@@ -3,13 +3,11 @@
 
 #
 # Install curl and unzip; they are needed by cyhy_core/var/load_places.sh
-# Install git so that pip can install from a git URL
 #
 - name: Install curl and unzip
   ansible.builtin.package:
     name:
       - curl
-      - git
       - unzip
 
 # TODO: Figure out why we can't just put docutils in cyhy-commander/setup.py
@@ -23,19 +21,21 @@
 # Create some directories
 - name: Create some directories that cyhy-commander requires
   ansible.builtin.file:
+    group: "{{ file_owner_group | default(omit) }}"
     mode: 0755
+    owner: "{{ file_owner_username | default(omit) }}"
     path: "{{ item }}"
     state: directory
   loop:
-    - /var/log/cyhy
     - /var/cyhy/commander
+    - /var/log/cyhy
 
 # Copy the systemd unit file
 - name: Copy the systemd unit file for cyhy-commander
   ansible.builtin.copy:
-    src: cyhy-commander.service
     dest: /lib/systemd/system/cyhy-commander.service
     mode: 0644
+    src: cyhy-commander.service
 
 # Don't enable cyhy-commander here; we do that when we spin up an instance
 # so remaining setup tasks can be completed first
