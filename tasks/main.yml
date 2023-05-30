@@ -33,9 +33,9 @@
 # Copy the systemd unit file
 - name: Copy the systemd unit file for cyhy-commander
   ansible.builtin.copy:
-    src: cyhy-commander.service
     dest: /lib/systemd/system/cyhy-commander.service
     mode: 0644
+    src: cyhy-commander.service
 
 # Don't enable cyhy-commander here; we do that when we spin up an instance
 # so remaining setup tasks can be completed first
