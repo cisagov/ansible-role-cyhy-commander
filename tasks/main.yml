@@ -29,8 +29,8 @@
     path: "{{ item }}"
     state: directory
   loop:
-    - /var/log/cyhy
     - /var/cyhy/commander
+    - /var/log/cyhy
 
 # Copy the systemd unit file
 - name: Copy the systemd unit file for cyhy-commander
