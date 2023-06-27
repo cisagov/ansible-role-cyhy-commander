@@ -1,13 +1,14 @@
 ---
 dependencies:
-  - src: https://github.com/cisagov/ansible-role-cyhy-core
-    name: cyhy_core
-  - src: https://github.com/cisagov/ansible-role-pip
-    name: pip
+  - name: cyhy_core
+    src: https://github.com/cisagov/ansible-role-cyhy-core
+    version: lineage/skeleton
+  - name: pip
+    src: https://github.com/cisagov/ansible-role-pip
     vars:
       pip_install_pip2: true
-  - src: https://github.com/cisagov/ansible-role-python
-    name: python
+  - name: python
+    src: https://github.com/cisagov/ansible-role-python
     vars:
       python_install_python2: true
 galaxy_info:
