@@ -11,5 +11,5 @@ module "user" {
   }
 
   entity         = "ansible-role-cyhy-commander"
-  ssm_parameters = ["/github/oauth_token", "/cyhy/core/geoip/license_key"]
+  ssm_parameters = ["/cyhy/core/geoip/license_key"]
 }
