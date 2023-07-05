@@ -30,6 +30,9 @@ updates:
       - dependency-name: "ansible-lint"
 
   - package-ecosystem: "terraform"
-    directory: "/"
+    directory: "/terraform"
     schedule:
       interval: "weekly"
+    ignore:
+      # Managed by cisagov/skeleton-ansible-role-with-test-user
+      - dependency-name: "hashicorp/aws"

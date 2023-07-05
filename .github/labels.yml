@@ -56,6 +56,9 @@
 - color: "d73a4a"
   description: This issue or pull request addresses a security issue
   name: security
+- color: "7b42bc"
+  description: Pull requests that update Terraform code
+  name: terraform
 - color: "00008b"
   description: This issue or pull request adds or otherwise modifies test code
   name: test

@@ -1,16 +1,20 @@
 ---
-# tasks file for cyhy_commander
+- name: Install cisagov/cyhy-core
+  ansible.builtin.include_role:
+    name: cyhy_core
+  vars:
+    cyhy_core_maxmind_license_key: "{{ cyhy_commander_maxmind_license_key }}"
 
-#
-# Install curl and unzip; they are needed by cyhy_core/var/load_places.sh
-#
+# Install curl and unzip; they are needed by
+# cyhy_core/var/load_places.sh
 - name: Install curl and unzip
   ansible.builtin.package:
     name:
       - curl
       - unzip
 
-# TODO: Figure out why we can't just put docutils in cyhy-commander/setup.py
+# TODO: Figure out why we can't just put docutils in
+# cyhy-commander/setup.py
 - name: Install cyhy-commander and docutils (a cyhy-commander dependency)
   ansible.builtin.pip:
     executable: /usr/bin/pip2
@@ -21,9 +25,9 @@
 # Create some directories
 - name: Create some directories that cyhy-commander requires
   ansible.builtin.file:
-    group: "{{ file_owner_group | default(omit) }}"
+    group: "{{ cyhy_commander_file_owner_group | default(omit) }}"
     mode: 0755
-    owner: "{{ file_owner_username | default(omit) }}"
+    owner: "{{ cyhy_commander_file_owner_username | default(omit) }}"
     path: "{{ item }}"
     state: directory
   loop:
@@ -37,5 +41,5 @@
     mode: 0644
     src: cyhy-commander.service
 
-# Don't enable cyhy-commander here; we do that when we spin up an instance
-# so remaining setup tasks can be completed first
+# Don't enable cyhy-commander here; we do that when we spin up an
+# instance so remaining setup tasks can be completed first
