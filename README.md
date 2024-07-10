@@ -63,9 +63,11 @@ None.
 
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
-| cyhy_commander_file_owner_group | The name of the group that should own any non-system files or directories created by this role. | [Omitted](https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html#making-variables-optional) | No |
-| cyhy_commander_file_owner_username | The name of the user that should own any non-system files or directories created by this role. | [Omitted](https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html#making-variables-optional) | No |
-| cyhy_commander_maxmind_license_key | The MaxMind license key that provides access to a GeoIP2 database subscription. | n/a | Yes |
+| cyhy\_commander\_file\_owner\_group | The name of the group that should own any non-system files or directories created by this role. | [Omitted](https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html#making-variables-optional) | No |
+| cyhy\_commander\_file\_owner\_username | The name of the user that should own any non-system files or directories created by this role. | [Omitted](https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html#making-variables-optional) | No |
+| cyhy\_commander\_install\_geoipupdate | Whether to install the MaxMind geoipupdate tool. | `false` | No |
+| cyhy\_commander\_maxmind\_account\_id | The MaxMind account ID for access to a GeoIP2 database subscription. | n/a | Yes |
+| cyhy\_commander\_maxmind\_license\_key | The MaxMind license key that provides access to a GeoIP2 database subscription. | n/a | Yes |
 
 ## Dependencies ##
 
