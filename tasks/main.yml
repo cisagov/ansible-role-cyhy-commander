@@ -28,7 +28,7 @@
 - name: Create some directories that cyhy-commander requires
   ansible.builtin.file:
     group: "{{ cyhy_commander_file_owner_group | default(omit) }}"
-    mode: 0755
+    mode: u=rwx,g=rx,o=rx
     owner: "{{ cyhy_commander_file_owner_username | default(omit) }}"
     path: "{{ item }}"
     state: directory
@@ -40,7 +40,7 @@
 - name: Copy the systemd unit file for cyhy-commander
   ansible.builtin.copy:
     dest: /lib/systemd/system/cyhy-commander.service
-    mode: 0644
+    mode: u=rw,g=r,o=r
     src: cyhy-commander.service
 
 # Don't enable cyhy-commander here; we do that when we spin up an
