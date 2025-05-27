@@ -1,0 +1,9 @@
+[Unit]
+Description=Run cyhy-domainsync hostname housekeeping script.
+
+[Timer]
+OnCalendar={{ cyhy_commander_domainsync_frequency }}
+Persistent=true
+
+[Install]
+WantedBy=timers.target

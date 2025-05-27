@@ -1,0 +1,6 @@
+[Unit]
+Description=Run cyhy-domainsync hostname housekeeping script.
+
+[Service]
+ExecStart=/usr/local/bin/cyhy-domainsync
+Type=oneshot
