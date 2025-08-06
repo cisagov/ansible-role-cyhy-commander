@@ -1,4 +1,6 @@
 ---
+# Frequency must be a calendar event in the format understood by systemd
+# https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Calendar%20Events
 cyhy_commander_domainsync_frequency: daily
 # This mirrors the defaults in cisagov/ansible-role-cyhy-core and
 # cisagov/ansible-role-geoip2
