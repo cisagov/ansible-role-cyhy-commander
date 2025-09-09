@@ -7,5 +7,5 @@ cyhy_commander_domainsync_frequency: daily
 # cisagov/ansible-role-geoip2
 cyhy_commander_install_geoipupdate: false
 
-# The version of cisagov/cyhy-commander to use
+# The version of cisagov/cyhy-commander to use; must be a valid git reference
 cyhy_commander_version: v1.0.0

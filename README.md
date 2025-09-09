@@ -113,7 +113,7 @@ None.
 | cyhy\_commander\_install\_geoipupdate | Whether to install the MaxMind geoipupdate tool. | `false` | No |
 | cyhy\_commander\_maxmind\_account\_id | The MaxMind account ID for access to a GeoIP2 database subscription. | n/a | Yes |
 | cyhy\_commander\_maxmind\_license\_key | The MaxMind license key that provides access to a GeoIP2 database subscription. | n/a | Yes |
-| cyhy\_commander\_version | The version of cisagov/cyhy-commander to install. | `v1.0.0` | No |
+| cyhy\_commander\_version | The version of cisagov/cyhy-commander to install; must be a valid git reference. | `v1.0.0` | No |
 
 ## Dependencies ##
 
