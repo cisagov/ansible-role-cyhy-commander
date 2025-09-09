@@ -27,9 +27,11 @@ def test_pip_packages(host, pkg):
 @pytest.mark.parametrize(
     "f",
     [
-        "/var/log/cyhy",
-        "/var/cyhy/commander",
+        "/etc/systemd/system/run-cyhy-domainsync.service",
+        "/etc/systemd/system/run-cyhy-domainsync.timer",
         "/lib/systemd/system/cyhy-commander.service",
+        "/var/cyhy/commander",
+        "/var/log/cyhy",
     ],
 )
 def test_files(host, f):
