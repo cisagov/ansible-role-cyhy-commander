@@ -2,5 +2,7 @@
 Description=Run cyhy-domainsync hostname housekeeping script.
 
 [Service]
-ExecStart=/usr/local/bin/cyhy-domainsync
+# --no-owned flag skips resolved IP addresses that are owned
+# by a CyHy entity other than the default owner
+ExecStart=/usr/local/bin/cyhy-domainsync --no-owned
 Type=oneshot
