@@ -1,4 +1,7 @@
 ---
+# The version of cisagov/cyhy-core to use; must be a valid git reference.
+cyhy_commander_cyhy_core_version: v1.1.13
+
 # Frequency must be a calendar event in the format understood by systemd
 # https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Calendar%20Events
 cyhy_commander_domainsync_frequency: daily
