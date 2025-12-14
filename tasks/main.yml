@@ -6,7 +6,7 @@
     cyhy_core_install_geoipupdate: "{{ cyhy_commander_install_geoipupdate }}"
     cyhy_core_maxmind_account_id: "{{ cyhy_commander_maxmind_account_id }}"
     cyhy_core_maxmind_license_key: "{{ cyhy_commander_maxmind_license_key }}"
-    cyhy_core_version: "{{ cyhy_commander_cyhy_core_version }}"
+    cyhy_core_version: "{{ cyhy_commander_cyhy_core_version | default(omit) }}"
 
 # Install curl and unzip; they are needed by
 # cyhy_core/var/load_places.sh
