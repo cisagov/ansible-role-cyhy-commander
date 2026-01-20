@@ -15,14 +15,14 @@ None.
 
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
-| cyhy\_commander\_cyhy\_core\_version | The version of cisagov/cyhy-core to use; must be a valid git reference. | `v1.1.14` | No |
+| cyhy\_commander\_cyhy\_core\_version | The version of cisagov/cyhy-core to use; must be a valid git reference. | `v1.2.0` | No |
 | cyhy\_commander\_domainsync\_frequency | The frequency of running `cyhy-domainsync`, the hostname housekeeping script.  Must be a calendar event in the [format understood by systemd](https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Calendar%20Events). | `daily` | No |
 | cyhy\_commander\_file\_owner\_group | The name of the group that should own any non-system files or directories created by this role. | [Omitted](https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html#making-variables-optional) | No |
 | cyhy\_commander\_file\_owner\_username | The name of the user that should own any non-system files or directories created by this role. | [Omitted](https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html#making-variables-optional) | No |
 | cyhy\_commander\_install\_geoipupdate | Whether to install the MaxMind geoipupdate tool. | `false` | No |
 | cyhy\_commander\_maxmind\_account\_id | The MaxMind account ID for access to a GeoIP2 database subscription. | n/a | Yes |
 | cyhy\_commander\_maxmind\_license\_key | The MaxMind license key that provides access to a GeoIP2 database subscription. | n/a | Yes |
-| cyhy\_commander\_version | The version of cisagov/cyhy-commander to install; must be a valid git reference. | `v1.0.0` | No |
+| cyhy\_commander\_version | The version of cisagov/cyhy-commander to install; must be a valid git reference. | `v1.1.0` | No |
 
 ## Dependencies ##
 
