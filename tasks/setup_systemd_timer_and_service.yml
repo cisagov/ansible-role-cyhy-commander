@@ -1,18 +1,18 @@
 ---
-- name: Copy systemd service to run cyhy-domainsync
+- name: Copy systemd service to run {{ item }}
   ansible.builtin.copy:
-    dest: /etc/systemd/system/run-cyhy-domainsync.service
+    dest: /etc/systemd/system/run-{{ item }}.service
     mode: u=rw,g=r,o=r
-    src: run-cyhy-domainsync.service
+    src: run-{{ item }}.service
     # I'd like to validate the file here, but that can't be done
     # cleanly.  See ansible/ansible#19243.
     # validate: systemd-analyze verify %s
 
-- name: Copy systemd timer to run cyhy-domainsync
+- name: Copy systemd timer to run {{ item }}
   ansible.builtin.template:
-    dest: /etc/systemd/system/run-cyhy-domainsync.timer
+    dest: /etc/systemd/system/run-{{ item }}.timer
     mode: u=rw,g=r,o=r
-    src: run-cyhy-domainsync.j2.timer
+    src: run-{{ item }}.j2.timer
     # I'd like to validate the file here, but that can't be done
     # cleanly.  See ansible/ansible#19243.
     # validate: systemd-analyze verify %s
@@ -21,4 +21,4 @@
   ansible.builtin.systemd_service:
     daemon_reload: true
     enabled: true
-    name: run-cyhy-domainsync.timer
+    name: run-{{ item }}.timer

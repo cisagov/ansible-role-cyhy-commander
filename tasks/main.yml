@@ -48,5 +48,8 @@
 # Don't enable cyhy-commander here; we do that when we spin up an
 # instance so remaining setup tasks can be completed first
 
-- name: Set cyhy-domainsync to run on a schedule
-  ansible.builtin.include_tasks: setup_cyhy_domainsync.yml
+- name: Set cyhy-domainsync and cyhy-wd40 to run on a schedule
+  ansible.builtin.include_tasks: setup_systemd_timer_and_service.yml
+  loop:
+    - cyhy-domainsync
+    - cyhy-wd40
