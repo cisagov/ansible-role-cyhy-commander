@@ -19,5 +19,6 @@
 
 - name: Enable the systemd timer
   ansible.builtin.systemd_service:
+    daemon_reload: true
     enabled: true
     name: run-cyhy-domainsync.timer
