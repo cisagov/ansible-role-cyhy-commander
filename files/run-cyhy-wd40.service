@@ -2,5 +2,5 @@
 Description=cyhy-wd40 housekeeping service for unsticking stuck scans
 
 [Service]
-ExecStart=/usr/local/bin/cyhy-wd40 --debug
+ExecStart=/usr/local/bin/cyhy-wd40
 Type=oneshot
