@@ -29,6 +29,8 @@ def test_pip_packages(host, pkg):
     [
         "/etc/systemd/system/run-cyhy-domainsync.service",
         "/etc/systemd/system/run-cyhy-domainsync.timer",
+        "/etc/systemd/system/run-cyhy-wd40.service",
+        "/etc/systemd/system/run-cyhy-wd40.timer",
         "/lib/systemd/system/cyhy-commander.service",
         "/var/cyhy/commander",
         "/var/log/cyhy",

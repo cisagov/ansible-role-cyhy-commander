@@ -1,0 +1,9 @@
+[Unit]
+Description=Run cyhy-wd40 script for unsticking stuck scans.
+
+[Timer]
+OnCalendar={{ cyhy_commander_wd40_frequency }}
+Persistent=true
+
+[Install]
+WantedBy=timers.target
