@@ -11,7 +11,7 @@ cyhy_commander_domainsync_frequency: daily
 cyhy_commander_install_geoipupdate: false
 
 # The version of cisagov/cyhy-commander to use; must be a valid git reference
-cyhy_commander_version: v1.1.0
+cyhy_commander_version: v1.2.0
 
 # Frequency must be a calendar event in the format understood by systemd
 # https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Calendar%20Events
