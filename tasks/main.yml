@@ -16,6 +16,23 @@
       - curl
       - unzip
 
+- name: >-
+    Install system versions of the Python packages that cyhy-commander
+    needs
+  ansible.builtin.package:
+    name:
+      # The version offered by Debian as a system package is
+      # unsuitable due to the version constraints in
+      # cisagov/cyhy-commander's setup.py.
+      # - python-daemon
+      - python-docopt
+      # The version offered by Debian as a system package is
+      # unsuitable due to the version constraints in
+      # cisagov/cyhy-commander's setup.py.
+      # - python-fabric
+      - python-lockfile
+      - python-tz
+
 # TODO: Figure out why we can't just put docutils in
 # cyhy-commander/setup.py
 - name: Install cyhy-commander and docutils (a cyhy-commander dependency)
