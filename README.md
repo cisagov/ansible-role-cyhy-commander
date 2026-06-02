@@ -14,7 +14,7 @@ None.
 ## Role Variables ##
 
 | Variable | Description | Default | Required |
-|----------|-------------|---------|----------|
+| -------- | ----------- | ------- | -------- |
 | cyhy\_commander\_cyhy\_core\_version | The version of cisagov/cyhy-core to use; must be a valid git reference. | `v1.2.0` | No |
 | cyhy\_commander\_domainsync\_frequency | The frequency of running `cyhy-domainsync`, the hostname housekeeping script.  Must be a calendar event in the [format understood by systemd](https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Calendar%20Events). | `daily` | No |
 | cyhy\_commander\_wd40\_frequency | The frequency of running `cyhy-wd40`, the script for unsticking stuck scans.  Must be a calendar event in the [format understood by systemd](https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Calendar%20Events). | `daily` | No |
